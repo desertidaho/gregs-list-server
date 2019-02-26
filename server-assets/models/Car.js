@@ -2,15 +2,14 @@ let mongoose = require('mongoose')
 let Schema = mongoose.Schema
 
 //define schema
-let house = new Schema({
+let car = new Schema({
+  make: { type: String, required: true },
+  model: { type: String, required: true },
   year: { type: Number, required: true },
-  bedrooms: { type: Number, required: true },
-  bathrooms: { type: Number, required: true },
-  levels: { type: Number, required: true },
   price: { type: Number, required: true },
   description: { type: String, required: false },
   imgUrl: { type: String, required: true }
 })
 
 //export schema
-module.exports = mongoose.model('House', house)
+module.exports = mongoose.model('Car', car)
