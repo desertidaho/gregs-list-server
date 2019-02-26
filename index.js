@@ -11,9 +11,9 @@ require('./server-assets/database/gearhost-config')
 server.use(bp.json())
 server.use(bp.urlencoded({ extended: true }))
 
-
 //routes
-
+let houseRoutes = require('./server-assets/routes/house-routes')
+server.use('/api/drinks', houseRoutes)
 
 //default
 server.use('*', (req, res, next) => {
